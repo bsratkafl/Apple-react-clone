@@ -1,0 +1,32 @@
+.youtube-video-wrapper {
+  background: #fff;
+  padding: 50px;
+}
+
+.video-wrapper {
+  background: #f3f2f2;
+  box-shadow: 4px 0px 13px rgba(158, 158, 158, 0.12);
+  margin-bottom: 30px;
+  max-height: 393px;
+  overflow: hidden;
+}
+.video-info {
+  padding: 10px 20px;
+  text-align: left;
+}
+.description {
+  font-size: 0.6em;
+  color: #676767;
+}
+.title {
+  font-weight: 700;
+  line-height: 1.2em;
+}
+
+.title-wrapper {
+  font-weight: 600;
+  font-size: 30px;
+  line-height: 1.15em;
+  letter-spacing: -0.04em;
+  margin-bottom: 50px;
+}
