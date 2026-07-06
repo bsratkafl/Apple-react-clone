@@ -1,3 +1,4 @@
+require("dotenv").config({ quiet: true });
 const mysql = require("mysql2");
 const express = require("express");
 const cors = require("cors");
@@ -14,11 +15,11 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 const mysqlConnection = mysql.createConnection({
-  user: "myDBuser",
-  password: "123456",
-  host: "127.0.0.1",
-  database: "myDB",
-  socketPath: "/Applications/MAMP/tmp/mysql/mysql.sock", //path to mysql sock in MAMP
+  user: process.env.DB_USER,
+  password: process.env.DB_PASSWORD,
+  host: process.env.DB_HOST,
+  database: process.env.DB_NAME,
+  socketPath: process.env.DB_SOCKET_PATH, //path to mysql sock in MAMP
 });
 
 mysqlConnection.connect((err) => {
@@ -159,7 +160,7 @@ app.get("/iphones/:product_id", (req, res) => {
   );
 });
 
-const port = 4000;
+const port = process.env.PORT || 4000;
 app.listen(port, () =>
   console.log(`Server is running on http://localhost:${port}`),
 );
